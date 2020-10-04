@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height:400px;
+  }
+  .gauge {
+    width:40%;
+    min-height:100px;
+    margin-left:30%;
+    margin-right:30%;
+    background-color:#efefef;
+    border:1px solid #efefef;
+    /* border radius set per corner example*/
+    /*border-top-left-radius: 10px;*/
+    border-radius:10px;
+  }
+  .inner {
+    text-align:center;
+    min-height:80px;
+    margin:10px 10px;
+    background-color:#dfdfdf;
+    border-radius:5px;
+  }
+  #fill1 {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    background-color:red;
+    min-height:80px;
+  }
