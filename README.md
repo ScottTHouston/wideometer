@@ -2,7 +2,7 @@
 
 Twitch Applet that displays a guage on screen where the amount of fill indicates the streamers "Wideness" (read:cheekiness).
 
-#Commands :
+# Commands :
 
 ## Resets the Wide-O-Meter
 !wom reset
