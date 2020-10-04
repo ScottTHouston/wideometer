@@ -34,7 +34,10 @@ client.on('message', (channel, tags, message, self) => {
             var margins =  (100 - input) / 2;
             document.getElementById("fill1").style.marginLeft = margins + "%";
             document.getElementById("fill1").style.marginRight = margins + "%";
+            document.getElementById("wom").innerText = input + "%";
             console.log(`Wom set to` + input);
+
+            // Looking to implement color gradient change from green -> yellow -> orange -> red depending on percentage breaks.
         }
         if (input === 'critical') {
             //do the thing
