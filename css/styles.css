@@ -29,4 +29,8 @@
     transition: all 0.2s ease-in-out;
     background-color:red;
     min-height:80px;
+    /* Set Default widths */
+    width:10%;
+    margin-left:45%;
+    margin-right:45%;
   }

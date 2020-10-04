@@ -30,10 +30,10 @@ client.on('message', (channel, tags, message, self) => {
         }
         if (Number.isInteger(+input)) {
             document.getElementById("fill1").setAttribute("wideData", input)
-            document.getElementById("fill1").style.width = input;
+            document.getElementById("fill1").style.width = input + "%";
             var margins =  (100 - input) / 2;
-            document.getElementById("fill1").style.marginLeft = margins;
-            document.getElementById("fill1").style.marginRight = margins;
+            document.getElementById("fill1").style.marginLeft = margins + "%";
+            document.getElementById("fill1").style.marginRight = margins + "%";
             console.log(`Wom set to` + input);
         }
         if (input === 'critical') {
