@@ -1,7 +1,5 @@
 //var womData = document.getElementById("fill1").getAttribute("wideData");
 
-const tmi = require('tmi.js');
-
 const client = new tmi.Client({
 	connection: {
 		secure: true,
