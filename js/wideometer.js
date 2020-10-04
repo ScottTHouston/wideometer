@@ -28,7 +28,7 @@ client.on('message', (channel, tags, message, self) => {
             document.getElementById("fill1").setAttribute("wideData", '10')
             console.log(`Wom reset`);
         }
-        if (Number.isInteger(+input)) {
+        if (Number.isInteger(+input) && input > 10 && input < 101) {
             document.getElementById("fill1").setAttribute("wideData", input)
             document.getElementById("fill1").style.width = input + "%";
             var margins =  (100 - input) / 2;
