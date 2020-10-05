@@ -41,7 +41,6 @@ client.on('message', (channel, tags, message, self) => {
                 document.getElementById("wom").classList.remove("critical");
                 document.getElementById("glass").classList.remove("crack");
             }
-            console.log(`Wom set to` + input);
         }
         //if (input === 'critical') {
             //do the thing
@@ -56,7 +55,6 @@ client.on('message', (channel, tags, message, self) => {
         }
         
         var per = document.getElementById("fill1").getAttribute("wideData");
-        console.log(per);
         document.getElementById("fill1").style.width = per + "%";
         var margins =  (100 - per) / 2;
         document.getElementById("fill1").style.marginLeft = margins + "%";
@@ -70,7 +68,7 @@ client.on('message', (channel, tags, message, self) => {
 
         //particle animations
 
-        var particles = [];
+        //var particles = [];
         var alreadyRendering = false;
 
         // originally from Rachel Smith on CodePen https://codepen.io/rachsmith/pen/oXBOwg
@@ -80,10 +78,10 @@ client.on('message', (channel, tags, message, self) => {
             var ctx = canvas.getContext('2d');
             var width = canvas.width = sparkWidth;
             var height = canvas.height = sparkHeight;
-            var colors = ['#AF4A0D', '##FFD064', '#FEFFFD'];
+            var colors = ['#000000', '#000000', '#000000'];
             // this is only used for simple gravity
             var gravity = 0.08;
-            //var particles = [];
+            var particles = [];
             var floor = sparkHeight;
             var currentlySparking = false;
             var maxSize = 10;
