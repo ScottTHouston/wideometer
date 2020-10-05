@@ -5,7 +5,7 @@ const client = new tmi.Client({
 		secure: true,
 		reconnect: true
 	},
-	channels: [ 'sirwhy96' ]
+	channels: [ 'majink' ]
 });
 
 client.connect();
