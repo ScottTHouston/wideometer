@@ -10,6 +10,8 @@ const client = new tmi.Client({
 	channels: [ 'majink' ]
 });
 
+var block = false;
+
 client.connect();
 
 client.on('message', (channel, tags, message, self) => {
@@ -22,10 +24,17 @@ client.on('message', (channel, tags, message, self) => {
         var input = message.split(' ')[1];
 
         if (input == ('' || null)) {
-            console.log(`Wom command received`);
+            console.log(`Invalid !wom command received : Please use '!wom [1-100]' or '!wom reset'.`);
         }
 
         if (input === 'reset') {
+            reset();
+        }
+        if (Number.isInteger(+input) && input > 0 && input < 101) {
+            setWide(input);
+        }
+
+        function reset(){
             document.getElementById("fill1").setAttribute("wideData", "0");
             document.getElementById("cont").classList.remove("shake");
             document.getElementById("wom").classList.remove("critical");
@@ -33,7 +42,8 @@ client.on('message', (channel, tags, message, self) => {
             $('.particles').removeClass("particle");
             console.log(`Wom reset`);
         }
-        if (Number.isInteger(+input) && input > 0 && input < 101) {
+
+        function setWide(input){
             document.getElementById("fill1").setAttribute("wideData", input);
             if (input >= 90) {
                 document.getElementById("cont").classList.add("shake");
@@ -48,10 +58,6 @@ client.on('message', (channel, tags, message, self) => {
                 $('.particles').removeClass("particle");
             }
         }
-        //if (input === 'critical') {
-            //do the thing
-        //    console.log(`wom is critical!`);
-        //}
 
         function hsl_col_perc(percent, start, end) {
             var a = percent / 100,
@@ -69,6 +75,11 @@ client.on('message', (channel, tags, message, self) => {
         document.getElementById("fill1").style.backgroundColor = colour;
         document.getElementById("wom").innerText = per + "%";
         console.log(`Wom set to ` + per);
+
+        block = true;
+          setTimeout(() => {
+              block = false;
+          }, (60 * 1000));
     
     }
 });
