@@ -1,3 +1,7 @@
+var pageCanvas = document.getElementById("canvas");
+pageCanvas.width  = window.innerWidth;
+pageCanvas.height = window.innerHeight;
+
 const client = new tmi.Client({
 	connection: {
 		secure: true,
@@ -68,6 +72,7 @@ client.on('message', (channel, tags, message, self) => {
 
         //particle animations
 
+        
         //var particles = [];
         var alreadyRendering = false;
 
@@ -205,6 +210,7 @@ client.on('message', (channel, tags, message, self) => {
             var sparkWidth = sparkCanvas.width();
             var sparkHeight = sparkCanvas.height();
             sparkShower(initialY, initialX, sparkWidth, sparkHeight);
+            console.log('sparked');
           }
     }
 });
