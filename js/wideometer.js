@@ -1,5 +1,3 @@
-//var womData = document.getElementById("fill1").getAttribute("wideData");
-
 const client = new tmi.Client({
 	connection: {
 		secure: true,
@@ -11,7 +9,6 @@ const client = new tmi.Client({
 client.connect();
 
 client.on('message', (channel, tags, message, self) => {
-    //console.log(`${tags['display-name']}: ${message}`);
     if(self || message[0] !== '!') {
         return;
     }
@@ -29,13 +26,20 @@ client.on('message', (channel, tags, message, self) => {
             console.log(`Wom reset`);
         }
         if (Number.isInteger(+input) && input > 0 && input < 101) {
-            document.getElementById("fill1").setAttribute("wideData", input)
+            document.getElementById("fill1").setAttribute("wideData", input);
+            if (input > 90) {
+                document.getElementById("cont").classList.add("shake");
+            }
+            else {
+                document.getElementById("cont").classList.remove("shake");
+            }
             console.log(`Wom set to` + input);
         }
         if (input === 'critical') {
             //do the thing
             console.log(`wom is critical!`);
         }
+        
 
         // Looking to implement color gradient change from green -> yellow -> orange -> red depending on percentage breaks.
         var per = document.getElementById("fill1").getAttribute("wideData");
@@ -45,6 +49,12 @@ client.on('message', (channel, tags, message, self) => {
         document.getElementById("fill1").style.marginLeft = margins + "%";
         document.getElementById("fill1").style.marginRight = margins + "%";
         document.getElementById("wom").innerText = per + "%";
+        if (input > 90) {
+                cont.classList.add("shake");
+            }
+            else {
+                cont.classList.remove("shake");
+            }
         console.log(`Wom set to ` + per);
     }
 });
