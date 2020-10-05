@@ -28,7 +28,7 @@ client.on('message', (channel, tags, message, self) => {
         }
         if (Number.isInteger(+input) && input > 0 && input < 101) {
             document.getElementById("fill1").setAttribute("wideData", input);
-            if (input > 90) {
+            if (input >= 90) {
                 document.getElementById("cont").classList.add("shake");
             }
             else {
