@@ -2,16 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/requestAnimationFrame.js"></script>
   <script src="js/tmi.min.js"></script>
   <script src="js/wideometer.js"></script> 
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
+    <canvas id="canvas"></canvas>
     <h2 class="title">Wide-O-Meter &trade;</h2>
     <div id="cont" class="container">
         <div class="gauge">
+          
           <div class="inner">
+            <div id="glass"></div>
             <div id="fill1" wideData="10">
               <span id="wom">10%</span>
             </div>

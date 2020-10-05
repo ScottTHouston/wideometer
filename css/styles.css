@@ -36,6 +36,17 @@ html {
   background-color:#dfdfdf;
   border-radius:5px;
   overflow:hidden; /* stops the fill bar from overflowing the border radius and having square edges */
+  position: relative;
+}
+#glass {
+  z-index: 1;
+}
+#canvas {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height:100vh;
+  width:100vw;
 }
 #fill1 {
   display: flex;
@@ -57,10 +68,32 @@ html {
   font-family: Arial, Helvetica, sans-serif;
   font-weight:bold;
   color:white;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out; /* sets easing on all styling changes */
+}
+#wom::after {
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
+  box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
+  opacity:0;
+}
+
+.critical {
+  animation: critical 1s infinite;
 }
 
 .shake {
   animation: shake 1s infinite;
+}
+
+.crack {
+  background-image: url('../images/glass.png');
+  background-position: bottom right;
+  background-position: right;
+  background-size:  contain;
+  background-repeat: no-repeat;
 }
 
 @keyframes shake {
@@ -75,4 +108,9 @@ html {
   80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
   90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
   100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@keyframes critical {
+  0% { opacity:0; }
+  100% { opacity:1; }
 }
