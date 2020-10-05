@@ -23,6 +23,7 @@ client.on('message', (channel, tags, message, self) => {
 
         if (input === 'reset') {
             document.getElementById("fill1").setAttribute("wideData", "0");
+            document.getElementById("cont").classList.remove("shake");
             console.log(`Wom reset`);
         }
         if (Number.isInteger(+input) && input > 0 && input < 101) {
