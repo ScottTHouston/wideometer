@@ -40,15 +40,22 @@ client.on('message', (channel, tags, message, self) => {
             //do the thing
             console.log(`wom is critical!`);
         }
-        
 
-        // Looking to implement color gradient change from green -> yellow -> orange -> red depending on percentage breaks.
+        function hsl_col_perc(percent, start, end) {
+            var a = percent / 100,
+                b = (end - start) * a,
+                c = b + start;
+            return 'hsl('+c+', 60%, 50%)';
+        }
+        
         var per = document.getElementById("fill1").getAttribute("wideData");
         console.log(per);
         document.getElementById("fill1").style.width = per + "%";
         var margins =  (100 - per) / 2;
         document.getElementById("fill1").style.marginLeft = margins + "%";
-        document.getElementById("fill1").style.marginRight = margins + "%";
+        document.getElementById("fill1").style.marginRight = margins + "%";     
+        let colour = hsl_col_perc(per, 120, 0);
+        document.getElementById("fill1").style.backgroundColor = colour;
         document.getElementById("wom").innerText = per + "%";
         console.log(`Wom set to ` + per);
     }

@@ -22,6 +22,9 @@ html {
   min-height:100px;
   background-color:#efefef;
   border:1px solid #efefef;
+  -webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
   /* border radius set per corner example*/
   /*border-top-left-radius: 10px;*/
   border-radius:10px;
