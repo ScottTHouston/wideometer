@@ -49,12 +49,6 @@ client.on('message', (channel, tags, message, self) => {
         document.getElementById("fill1").style.marginLeft = margins + "%";
         document.getElementById("fill1").style.marginRight = margins + "%";
         document.getElementById("wom").innerText = per + "%";
-        if (input > 90) {
-                cont.classList.add("shake");
-            }
-            else {
-                cont.classList.remove("shake");
-            }
         console.log(`Wom set to ` + per);
     }
 });
